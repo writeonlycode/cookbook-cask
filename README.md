@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Database Schema
 
-## Getting Started
+## Recipes Table
 
-First, run the development server:
+---
+| Field | Type | Description |
+---
+| id          | bigint | Primary key                                                   |
+| name        | text   | The name of the recipe                                        |
+| description | text   | A short description of the recipe                             |
+| duration    | int    | The amount of time it takes to prepare the recipe             |
+| user_id     | bigint | The id of the author of the recipe, refers to the users table |
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+##  Ingredients Table
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Each ingredient belongs to a specific recipe. There will be some duplication in
+the ingredients throughout the database. But this makes it easier to include
+some specific data about an ingredient in a particular recipe, like a
+customized picture.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+---
+| Field | Type | Description |
+---
+| id        | bigint | Primary key                                                              |
+| name      | text   | The name of the ingredient                                               |
+| weight    | int    | The order in which the ingredient appears of the instruction of a recipe |
+| amount    | int    | The text of the instruction of a recipe                                  |
+| unit      | int    | The text of the instruction of a recipe                                  |
+| recipe_id | bigint | The id of the recipe, refers to the recipes table                        |
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+##  Units Table
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The units table is general and isn't editable to regular users.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
+| Field | Type | Description |
+---
+| id   | bigint | Primary key          |
+| name | text   | The name of the unit |
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+##  Instructions Table
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Each instruction belongs to a specific recipe. This makes sense and it also
+makes it easier to include some specific data about an ingredient in a
+particular recipe, like a customized picture.
+
+---
+| Field | Type | Description |
+---
+| id        | bigint | Primary key                                       |
+| text      | text   | The text of the instruction of a recipe           |
+| weight    | int    | The text of the instruction of a recipe           |
+| recipe_id | bigint | The id of the recipe, refers to the recipes table |
+
