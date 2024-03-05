@@ -1,10 +1,7 @@
 import RecipeForm from '../(components)/RecipeForm'
-import { cookies } from 'next/headers'
 import Link from 'next/link'
 
 export default async function RecipeNewPage() {
-  cookies()
-
   return (
     <main className="mx-auto flex min-h-screen max-w-prose flex-col px-[1.5rem] py-[1.5rem]">
       <div className="mb-[2rem] mt-[0.75rem] flex items-center justify-between">

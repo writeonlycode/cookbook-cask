@@ -7,15 +7,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 
-export default function RecipeList({
-  recipes = [],
-  limit = 10,
-  count = 0,
-}: {
+interface RecipeListProps {
   recipes?: any
   limit?: number
   count?: number
-}) {
+}
+
+export default function RecipeList({ recipes = [], limit = 10, count = 0 }: RecipeListProps) {
   const initialRender = useRef(true)
 
   const [recipesLimit, setRecipesLimit] = useState(limit)

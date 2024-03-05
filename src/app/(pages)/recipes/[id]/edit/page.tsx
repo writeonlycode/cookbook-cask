@@ -4,7 +4,11 @@ import moment from 'moment'
 import { cookies } from 'next/headers'
 import Link from 'next/link'
 
-export default async function RecipeEditPage({ params: { id } }: any) {
+interface RecipeEditPageProps {
+  params: { id: number }
+}
+
+export default async function RecipeEditPage({ params: { id } }: RecipeEditPageProps) {
   cookies()
   const { data: recipe, error } = await supabase
     .from('recipes')

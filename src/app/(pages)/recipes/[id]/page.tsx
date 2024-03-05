@@ -6,7 +6,11 @@ import { cookies } from 'next/headers'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default async function RecipeSinglePage({ params: { id } }: any) {
+interface RecipeSinglePageProps {
+  params: { id: number }
+}
+
+export default async function RecipeSinglePage({ params: { id } }: RecipeSinglePageProps) {
   cookies()
   const { data: recipe, error } = await supabase
     .from('recipes')

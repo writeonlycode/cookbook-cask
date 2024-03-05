@@ -10,7 +10,11 @@ import TextAreaArrayInstructions from './TextAreaArrayInstructions'
 import moment from 'moment'
 import { useFormState } from 'react-dom'
 
-export default function RecipeForm({ recipe }: any) {
+interface RecipeFormProps {
+  recipe?: any
+}
+
+export default function RecipeForm({ recipe }: RecipeFormProps) {
   const [{ data, error }, action] = useFormState(recipe ? update : insert, { data: null, error: null })
 
   return (

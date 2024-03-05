@@ -5,7 +5,11 @@ import { Dialog, DialogContent } from '@/app/(components)/ui/Dialog'
 import { DialogTrigger } from '@radix-ui/react-dialog'
 import { useFormState, useFormStatus } from 'react-dom'
 
-export default function RecipeDelete({ id }: any) {
+interface RecipeDeleteProps {
+  id: number
+}
+
+export default function RecipeDelete({ id }: RecipeDeleteProps) {
   const [error, action] = useFormState(destroy, undefined)
 
   if (error) {
