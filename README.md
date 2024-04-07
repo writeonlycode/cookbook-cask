@@ -103,4 +103,4 @@ update, creation or removal of the appropriate rows in the `ingredients` and
 
 ### License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](https://github.com/writeonlycode/cookbook-cask/blob/main/LICENSE.md).
