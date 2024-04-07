@@ -26,7 +26,7 @@ export default function InputArrayIngredients({ recipe, recipeState, recipeError
         onDragStart={() => {
           setShowRemove(true)
         }}
-        onDragEnd={(result) => {
+        onDragEnd={(result: any) => {
           const {
             source: { index: sourceIndex },
             destination: { droppableId: destinationId, index: destinationIndex },
@@ -79,7 +79,7 @@ export default function InputArrayIngredients({ recipe, recipeState, recipeError
                                 setInputArray(newArray)
                               }}
                               placeholder="Enter ingredient"
-                              className="border-outline text-primaryText placeholder:text-secondaryText block w-full rounded-[2rem] border px-[1.5rem] py-[1.1875rem] text-[0.9375rem] font-[500] leading-[1.125rem] tracking-[0.07rem]"
+                              className="text-primaryText block w-full rounded-[2rem] border border-outline px-[1.5rem] py-[1.1875rem] text-[0.9375rem] font-[500] leading-[1.125rem] tracking-[0.07rem] placeholder:text-secondaryText"
                             />
                           </div>
                         )
@@ -100,7 +100,7 @@ export default function InputArrayIngredients({ recipe, recipeState, recipeError
                 {...provided.droppableProps}
                 type="button"
                 className={cn(
-                  'border-outline text-primaryText flex w-full items-center justify-center gap-[0.3125rem] rounded-[2rem] border p-[1.1875rem] text-[0.9375rem] font-[500] leading-[1.125rem] tracking-[0.07rem] duration-300',
+                  'text-primaryText flex w-full items-center justify-center gap-[0.3125rem] rounded-[2rem] border border-outline p-[1.1875rem] text-[0.9375rem] font-[500] leading-[1.125rem] tracking-[0.07rem] duration-300',
                   { 'border-secondary text-secondary': showRemove, 'bg-secondary/10': snapshot.isDraggingOver }
                 )}
                 onClick={() => {

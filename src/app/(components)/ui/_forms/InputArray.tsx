@@ -26,7 +26,7 @@ export default function InputArray({ valueArray, className, disabled, ...props }
         onDragStart={() => {
           setShowRemove(true)
         }}
-        onDragEnd={(result) => {
+        onDragEnd={(result: any) => {
           const {
             source: { index: sourceIndex },
             destination: { droppableId: destinationId, index: destinationIndex },
