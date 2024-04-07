@@ -25,7 +25,11 @@ export default function RecipeList({ initialRecipes = [], initialCount, limit = 
   const [recipesLimit, setRecipesLimit] = useState(limit)
 
   // Recipes Data
-  const { data, count, pending } = useRecipes(initialRecipes, initialCount, { textSearch, durationRange, limit: recipesLimit })
+  const { data, count, pending } = useRecipes(initialRecipes, initialCount, {
+    textSearch,
+    durationRange,
+    limit: recipesLimit,
+  })
 
   // Component Other States
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
@@ -37,7 +41,11 @@ export default function RecipeList({ initialRecipes = [], initialCount, limit = 
           <div className="grow">
             <RecipeSearch textSearch={textSearch} setTextSearch={setTextSearch} pending={pending} />
           </div>
-          <button onClick={() => setIsFiltersOpen(!isFiltersOpen)} className="relative h-[1.5rem] w-[1.5rem]">
+          <button
+            onClick={() => setIsFiltersOpen(!isFiltersOpen)}
+            className="relative h-[1.5rem] w-[1.5rem]"
+            aria-label="Filters"
+          >
             {durationRange && (
               <span className="absolute right-0 top-0 inline-flex h-[0.5rem] w-[0.5rem] rounded-full bg-primary"></span>
             )}
@@ -54,6 +62,7 @@ export default function RecipeList({ initialRecipes = [], initialCount, limit = 
               <Image
                 src={food}
                 alt="Recipe Picture"
+                sizes="288.5px"
                 className="mb-[1rem] aspect-square w-full rounded-[1rem] object-cover object-center"
               />
               <div className="flex flex-col">
