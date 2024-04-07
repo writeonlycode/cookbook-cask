@@ -21,6 +21,16 @@ have any questions or feedback, please feel free to contact us!
 - **radix-ui/shadow-ui**: A library of low-level UI components for building accessible and composable interfaces.
 - **Moment.js**: A library for parsing, validating, manipulating, and displaying dates and times in JavaScript.
 
+## Screenshoots
+
+![](https://github.com/writeonlycode/cookbook-cask/blob/main/screenshoots/Screenshot%202024-04-07%20at%2010-39-23%20Cookbook%20Cask.png?raw=true)
+![](https://github.com/writeonlycode/cookbook-cask/blob/main/screenshoots/Screenshot%202024-04-07%20at%2010-39-46%20Cookbook%20Cask.png?raw=true)
+![](https://github.com/writeonlycode/cookbook-cask/blob/main/screenshoots/Screenshot%202024-04-07%20at%2010-39-56%20Cookbook%20Cask.png?raw=true)
+![](https://github.com/writeonlycode/cookbook-cask/blob/main/screenshoots/Screenshot%202024-04-07%20at%2010-40-08%20Cookbook%20Cask.png?raw=true)
+![](https://github.com/writeonlycode/cookbook-cask/blob/main/screenshoots/Screenshot%202024-04-07%20at%2010-40-19%20Cookbook%20Cask.png?raw=true)
+![](https://github.com/writeonlycode/cookbook-cask/blob/main/screenshoots/Screenshot%202024-04-07%20at%2010-40-35%20Cookbook%20Cask.png?raw=true)
+![](https://github.com/writeonlycode/cookbook-cask/blob/main/screenshoots/Screenshot%202024-04-07%20at%2010-40-49%20Cookbook%20Cask.png?raw=true)
+
 ## Database Tables Summary
 
 The project has 3 tables: `recipes` to store the recipes, `ingredients` to
