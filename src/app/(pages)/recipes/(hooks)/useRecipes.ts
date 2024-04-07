@@ -15,12 +15,13 @@ interface UseRecipesReturn {
 
 export function useRecipes(
   initialValue: any,
+  initialCount: any,
   { textSearch, durationRange, limit }: UseRecipesOptions
 ): UseRecipesReturn {
   const initialRender = useRef(true)
   const debounceTimerId = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  const [response, setResponse] = useState({ data: initialValue, count: initialValue.length })
+  const [response, setResponse] = useState({ data: initialValue, count: initialCount })
   const [pending, setPending] = useState(false)
 
   useEffect(() => {
@@ -34,8 +35,8 @@ export function useRecipes(
       }
 
       if (durationRange) {
-        query.gte('duration', durationRange[0] + " minutes")
-        query.lte('duration', durationRange[1] + " minutes")
+        query.gte('duration', durationRange[0] + ' minutes')
+        query.lte('duration', durationRange[1] + ' minutes')
       }
 
       if (limit) {

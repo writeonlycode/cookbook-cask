@@ -11,12 +11,12 @@ import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 
 interface RecipeListProps {
-  recipes?: any
+  initialRecipes?: any
+  initialCount?: number
   limit?: number
-  count?: number
 }
 
-export default function RecipeList({ recipes = [], limit = 10 }: RecipeListProps) {
+export default function RecipeList({ initialRecipes = [], initialCount, limit = 10 }: RecipeListProps) {
   // Filters
   const [textSearch, setTextSearch] = useState<string | undefined>()
   const [durationRange, setDurationRange] = useState<number[] | undefined>()
@@ -25,7 +25,7 @@ export default function RecipeList({ recipes = [], limit = 10 }: RecipeListProps
   const [recipesLimit, setRecipesLimit] = useState(limit)
 
   // Recipes Data
-  const { data, count, pending } = useRecipes(recipes, { textSearch, durationRange, limit: recipesLimit })
+  const { data, count, pending } = useRecipes(initialRecipes, initialCount, { textSearch, durationRange, limit: recipesLimit })
 
   // Component Other States
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)

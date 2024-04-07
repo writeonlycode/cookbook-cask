@@ -8,14 +8,7 @@ export default async function RecipeListPage() {
 
   return (
     <main className="mx-auto flex min-h-screen max-w-prose flex-col px-[1.5rem] py-[1.5rem]">
-      <RecipeList recipes={recipes} limit={10} count={count as number} />
+      <RecipeList initialRecipes={recipes} initialCount={count as number} limit={10} />
     </main>
   )
 }
-
-// const author = (
-//   <div className="mb-[1rem] flex items-center gap-[0.5rem]">
-//     <Image src={profile} alt="" className="h-[2rem] w-[2rem] rounded-full object-cover object-center" />
-//     <p className="text-primaryText text-[0.75rem] font-[500] leading-[0.9375rem] tracking-[0.03125rem]">Author Name</p>
-//   </div>
-// )
