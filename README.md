@@ -30,6 +30,7 @@ have any questions or feedback, please feel free to contact us!
 ![](https://github.com/writeonlycode/cookbook-cask/blob/main/screenshoots/Screenshot%202024-04-07%20at%2010-40-19%20Cookbook%20Cask.png?raw=true)
 ![](https://github.com/writeonlycode/cookbook-cask/blob/main/screenshoots/Screenshot%202024-04-07%20at%2010-40-35%20Cookbook%20Cask.png?raw=true)
 ![](https://github.com/writeonlycode/cookbook-cask/blob/main/screenshoots/Screenshot%202024-04-07%20at%2010-40-49%20Cookbook%20Cask.png?raw=true)
+![](https://github.com/writeonlycode/cookbook-cask/blob/main/screenshoots/Screenshot%20from%202024-04-07%2014-13-48.png?raw=true)
 
 ## Database Tables Summary
 
