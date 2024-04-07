@@ -7,20 +7,20 @@ import { trashIcon } from '@/app/(components)/icons/TrashIcon'
 import { cn } from '@/utils/cn'
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd'
 import { useState } from 'react'
+import { useFormStatus } from 'react-dom'
 
-export default function InputArrayIngredients({ recipe, recipeState, recipeError }: any) {
-  const initialInputArray = recipe?.ingredients?.map((ingredient: any, index: number) => {
-    return { ...ingredient, key: String(index) }
-  })
+export interface InputArrayProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  valueArray: []
+}
 
-  const [inputArray, setInputArray] = useState(initialInputArray || [])
+export default function InputArray({ valueArray, className, disabled, ...props }: InputArrayProps) {
+  const [inputArray, setInputArray] = useState<any[]>(valueArray || [])
   const [showRemove, setShowRemove] = useState(false)
+
+  const { pending } = useFormStatus()
 
   return (
     <div className="mb-[3.75rem] flex flex-col gap-[1.5rem] ">
-      <div className="text-primaryText mb-[0.625rem] text-[1.0625rem] font-[700] leading-[1.6875rem] tracking-[0.03125rem]">
-        Ingredients
-      </div>
       <Input type="hidden" name="recipe_ingredients" value={JSON.stringify(inputArray)} readOnly />
       <DragDropContext
         onDragStart={() => {
@@ -66,7 +66,7 @@ export default function InputArrayIngredients({ recipe, recipeState, recipeError
                             </span>
                             <Input
                               type="text"
-                              disabled={recipeState}
+                              disabled={disabled}
                               value={input.name}
                               onChange={(e: any) => {
                                 const newArray = inputArray.map((v: any, i: number) => {

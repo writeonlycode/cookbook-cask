@@ -15,6 +15,8 @@ export default async function RecipeSinglePage({ params: { id } }: RecipeSingleP
   const { data: recipe, error } = await supabase
     .from('recipes')
     .select('*, ingredients (*), instructions (*)')
+    .order('weight', { referencedTable: 'ingredients', ascending: true })
+    .order('weight', { referencedTable: 'instructions', ascending: true })
     .eq('id', id)
     .maybeSingle()
 

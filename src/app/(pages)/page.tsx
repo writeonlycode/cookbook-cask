@@ -7,7 +7,7 @@ export default async function Home() {
   cookies()
 
   return (
-    <main className="mx-auto flex min-h-screen max-w-prose flex-col items-center justify-center px-[1.5rem]">
+    <main className="mx-auto flex max-w-prose flex-col items-center justify-center px-[1.5rem]">
       <Image src={onboarding} alt="" className="mb-[3rem]" />
       <div className="mb-[4.5rem] max-w-[14rem]">
         <h1 className="text-mainText mb-[1rem] text-center text-[1.375rem] font-[700] leading-[2rem] tracking-[0.03125rem]">

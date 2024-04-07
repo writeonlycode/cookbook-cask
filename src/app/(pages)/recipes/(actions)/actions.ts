@@ -16,8 +16,6 @@ export async function insert(previousState: any, formData: FormData) {
 
   const { data, error } = await supabase.rpc('create_recipe', recipeFormData)
 
-  console.log(recipeFormData)
-
   if (!error) revalidatePath('/recipes')
 
   return { data, error }
