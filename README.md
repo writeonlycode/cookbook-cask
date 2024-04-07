@@ -3,57 +3,32 @@
 Cookbook Cask is a community-driven platform designed for culinary enthusiasts
 to anonymously share and discover recipes. 
 
-
-## Database Schema
+## Database Tables Summary
 
 The project has 3 tables: `recipes` to store the recipes, `ingredients` to
 store the ingredients for each recipe, and `instructions` to store the
 instructions for each recipe.
 
+### Recipes
 
-### Recipes Table
+- **id**: Unique identifier for each recipe.
+- **name**: The name of the recipe.
+- **description**: A brief description of the recipe.
+- **duration**: The duration of the recipe (e.g., cooking time).
 
----
-| Field | Type | Description |
----
-| id          | bigint | Primary key                                                   |
-| name        | text   | The name of the recipe                                        |
-| description | text   | A short description of the recipe                             |
-| duration    | int    | The amount of time it takes to prepare the recipe             |
-| user_id     | bigint | The id of the author of the recipe, refers to the users table |
+### Instructions
 
+- **id**: Unique identifier for each instruction.
+- **text**: The instruction text.
+- **weight**: The order or priority of the instruction.
+- **recipe_id**: The ID of the recipe to which the instruction belongs.
 
-###  Ingredients Table
+### Ingredients
 
-Each ingredient belongs to a specific recipe. There will be some duplication in
-the ingredients throughout the database. But this makes it easier to include
-some specific data about an ingredient in a particular recipe, like a
-customized picture.
-
-
----
-| Field | Type | Description |
----
-| id        | bigint | Primary key                                                              |
-| name      | text   | The name of the ingredient                                               |
-| weight    | int    | The order in which the ingredient appears of the instruction of a recipe |
-| recipe_id | bigint | The id of the recipe, refers to the recipes table                        |
-
-
-###  Instructions Table
-
-Each instruction belongs to a specific recipe. This makes sense and it also
-makes it easier to include some specific data about an ingredient in a
-particular recipe, like a customized picture.
-
----
-| Field | Type | Description |
----
-| id        | bigint | Primary key                                       |
-| text      | text   | The text of the instruction of a recipe           |
-| weight    | int    | The text of the instruction of a recipe           |
-| recipe_id | bigint | The id of the recipe, refers to the recipes table |
-
+- **id**: Unique identifier for each ingredient.
+- **name**: The name of the ingredient.
+- **weight**: The quantity or weight of the ingredient.
+- **recipe_id**: The ID of the recipe to which the ingredient belongs.
 
 ## Database Functions
 
@@ -64,14 +39,37 @@ that wraps the update of a row in the `recipes` table and the corresponding
 update, creation or removal of the appropriate rows in the `ingredients` and
 `instructions` tables.
 
+## Database Functions Summary
 
-### Create Recipe Function
+### create_recipe
 
-```sql
-```
+**Arguments:**
 
+- `recipe_name`: Text - The name of the recipe.
+- `recipe_description`: Text - A brief description of the recipe.
+- `recipe_duration`: Interval - The duration of the recipe.
+- `recipe_ingredients`: JSON Array - An array of JSON objects containing ingredient details.
+- `recipe_instructions`: JSON Array - An array of JSON objects containing instruction details.
 
-### Update Recipe Function
+**Definition:**
 
-```sql
-```
+- Inserts a new recipe into the database along with its ingredients and instructions.
+- Returns a JSON object containing the ID of the newly created recipe.
+
+### update_recipe
+
+**Arguments:**
+
+- `recipe_id`: Integer - The ID of the recipe to be updated.
+- `recipe_name`: Text - The updated name of the recipe.
+- `recipe_description`: Text - The updated description of the recipe.
+- `recipe_duration`: Interval - The updated duration of the recipe.
+- `recipe_ingredients`: JSON - JSON data representing updated ingredient details.
+- `recipe_instructions`: JSON - JSON data representing updated instruction details.
+
+**Definition:**
+
+- Updates an existing recipe in the database with the provided details.
+- Handles updating, inserting, and deleting ingredients and instructions based on the provided JSON data.
+- Returns a JSON object containing the ID of the updated recipe.
+
