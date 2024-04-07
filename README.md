@@ -3,6 +3,24 @@
 Cookbook Cask is a community-driven platform designed for culinary enthusiasts
 to anonymously share and discover recipes. 
 
+To see a live demo of Cookbook Cask, please visit the address below:
+
+https://cookbook-cask.vercel.app/
+
+Please note that this is a demo website and not an official website. If you
+have any questions or feedback, please feel free to contact us!
+
+## Project Overview
+
+### Technologies Used
+
+- **Next.js**: A React framework for building server-side rendered and static web applications.
+- **Supabase**: An open-source Firebase alternative for building real-time, collaborative applications.
+- **Tailwind CSS**: A utility-first CSS framework for rapidly building custom designs.
+- **react-beautiful-dnd**: A library for building drag-and-drop interfaces in React.
+- **radix-ui/shadow-ui**: A library of low-level UI components for building accessible and composable interfaces.
+- **Moment.js**: A library for parsing, validating, manipulating, and displaying dates and times in JavaScript.
+
 ## Database Tables Summary
 
 The project has 3 tables: `recipes` to store the recipes, `ingredients` to
@@ -73,3 +91,6 @@ update, creation or removal of the appropriate rows in the `ingredients` and
 - Handles updating, inserting, and deleting ingredients and instructions based on the provided JSON data.
 - Returns a JSON object containing the ID of the updated recipe.
 
+### License
+
+This project is licensed under the [MIT License](LICENSE).
