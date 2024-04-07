@@ -18,7 +18,7 @@ have any questions or feedback, please feel free to contact us!
 - **Supabase**: An open-source Firebase alternative for building real-time, collaborative applications.
 - **Tailwind CSS**: A utility-first CSS framework for rapidly building custom designs.
 - **react-beautiful-dnd**: A library for building drag-and-drop interfaces in React.
-- **radix-ui/shadow-ui**: A library of low-level UI components for building accessible and composable interfaces.
+- **radix-ui**: A library of low-level UI components for building accessible and composable interfaces.
 - **Moment.js**: A library for parsing, validating, manipulating, and displaying dates and times in JavaScript.
 
 ## Screenshoots
